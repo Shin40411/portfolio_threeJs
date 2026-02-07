@@ -24,8 +24,9 @@ export function Experience({ isMobile, isTablet, isSmallLaptop }: { isMobile: bo
     const baseCelestialY = isMobile ? -2 : (isTablet ? -1.5 : (isSmallLaptop ? -1 : 1))
 
     // Lift character up slightly from the very bottom
-    const baseCharacterX = isNonDesktop ? 0 : 2
-    const baseCharacterY = isMobile ? -5.4 : (isTablet ? -4.8 : (isSmallLaptop ? -3.8 : -1))
+    const baseCharacterX = isNonDesktop ? 0 : 0.8
+    const baseCharacterY = isMobile ? -5.4 : (isTablet ? -4.8 : (isSmallLaptop ? -3.8 : -1.1))
+    Broadway:
 
     useFrame(() => {
         const offset = scroll.offset

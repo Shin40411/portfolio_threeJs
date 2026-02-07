@@ -8,7 +8,7 @@ interface BookProps {
 
 const Book = ({ color, title, index }: BookProps) => {
     return (
-        <div className="group relative w-16 xs:w-18 sm:w-20 md:w-24 h-24 xs:h-26 sm:h-28 md:h-32 m-0.5 xs:m-1 md:m-2 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:scale-105">
+        <div className="group relative w-12 xs:w-18 sm:w-20 md:w-24 h-[72px] xs:h-26 sm:h-28 md:h-32 m-0.5 xs:m-1 md:m-2 cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:scale-105">
             <div
                 className="absolute inset-0 rounded-sm shadow-lg overflow-hidden border-l-[3px] border-black/30 z-10"
                 style={{ backgroundColor: color }}
@@ -16,13 +16,13 @@ const Book = ({ color, title, index }: BookProps) => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent opacity-60"></div>
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/leather.png')] opacity-5 pointer-events-none"></div>
 
-                <div className="p-1 md:p-2 h-full flex flex-col justify-between text-white select-none relative z-20">
+                <div className="p-0.5 md:p-2 h-full flex flex-col justify-between text-white select-none relative z-20">
                     <div className="flex justify-between items-start">
                         <div className="text-[7px] md:text-[8px] font-bold opacity-60 uppercase tracking-tighter">Vol. {index + 1}</div>
                         <div className="w-0.5 h-0.5 md:w-1 md:h-1 rounded-full bg-white/30"></div>
                     </div>
 
-                    <div className="text-[9px] md:text-sm font-black leading-tight break-words py-0.5 uppercase italic tracking-tighter border-t border-white/10 pt-1">
+                    <div className="text-[8px] md:text-sm font-black leading-tight break-words py-0.5 uppercase italic tracking-tighter border-t border-white/10 pt-1">
                         {title}
                     </div>
 
@@ -83,7 +83,7 @@ export function Bookshelf({ isMobile, isTablet }: BookshelfProps) {
             <div
                 className="absolute inset-x-0 -bottom-3 -top-6 md:-bottom-4 md:-top-8 -z-10 rounded-sm shadow-[inset_0_2px_15px_rgba(0,0,0,0.5)]"
                 style={{
-                    backgroundColor: '#8b5a2b',
+                    backgroundColor: '#a68a64',
                     backgroundImage: `
                         linear-gradient(90deg, transparent 96%, rgba(0,0,0,0.1) 96%),
                         linear-gradient(transparent 98%, rgba(255,255,255,0.03) 98%)
@@ -92,7 +92,7 @@ export function Bookshelf({ isMobile, isTablet }: BookshelfProps) {
                 }}
             ></div>
 
-            <div className="flex flex-nowrap justify-center gap-1.5 xs:gap-3 md:gap-4 px-2 xs:px-4 md:px-6 py-2 md:py-3 relative z-10 min-h-[100px] md:min-h-[130px]">
+            <div className="flex flex-nowrap justify-center gap-1 xs:gap-3 md:gap-4 px-2 xs:px-4 md:px-6 py-2 md:py-3 relative z-10 min-h-[76px] md:min-h-[130px]">
                 {books.map((p, i) => (
                     <div key={i} className="flex flex-col items-center">
                         <Book index={shelfIdx * chunkSize + i} {...p} />
@@ -102,22 +102,22 @@ export function Bookshelf({ isMobile, isTablet }: BookshelfProps) {
 
             <div className="relative h-2 md:h-4 w-full z-20">
                 <div
-                    className="absolute inset-x-0 h-2 md:h-3 -top-1 md:-top-1.5 bg-[#d2b48c] border-t border-white/10"
+                    className="absolute inset-x-0 h-2 md:h-3 -top-1 md:-top-1.5 bg-[#e6ccb2] border-t border-white/10"
                     style={{ transform: 'rotateX(75deg)', transformOrigin: 'top', boxShadow: '0 3px 10px rgba(0,0,0,0.4)' }}
                 ></div>
-                <div className="w-full h-full bg-gradient-to-b from-[#b08968] to-[#7f5539] border-t border-white/5 border-b border-black/30">
+                <div className="w-full h-full bg-gradient-to-b from-[#c6ac8f] to-[#a68a64] border-t border-white/5 border-b border-black/30">
                     <div className="mt-0.5 h-px w-full bg-black/10"></div>
                 </div>
             </div>
         </div>
     )
 
-    const rotationY = isMobile ? 1 : (isTablet ? 4 : 12)
+    const rotationY = isMobile ? 5 : (isTablet ? 12 : 22)
     const scale = 1.0
 
     return (
         <div
-            className="w-full max-w-[96vw] xs:max-w-[440px] sm:max-w-[540px] md:max-w-[680px] lg:max-w-xl mx-auto mt-6 md:mt-10 flex flex-col p-4 md:p-8 bg-[#582f0e] border-[10px] md:border-[16px] border-[#331800] rounded-xl shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] overflow-visible relative transition-all duration-700 ease-out origin-center"
+            className="w-full max-w-[96vw] xs:max-w-[440px] sm:max-w-[540px] md:text-680px] lg:max-w-xl mx-auto lg:mx-0 lg:ml-0 mt-6 md:mt-10 flex flex-col p-2 sm:p-4 md:p-8 bg-[#7f4f24] border-[6px] sm:border-[10px] md:border-[16px] border-[#582f0e] rounded-xl shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] overflow-visible relative transition-all duration-700 ease-out origin-center"
             style={{
                 transform: `perspective(1200px) rotateY(${rotationY}deg) rotateX(2deg) skewY(-0.5deg) scale(${scale})`,
                 transformStyle: 'preserve-3d'

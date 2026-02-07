@@ -91,7 +91,7 @@ export function Loader() {
                         animate={{ opacity: 0.2 }}
                         className="absolute bottom-12 font-mono text-[8px] tracking-[0.5em] uppercase text-black"
                     >
-                        Portfolio / MMXXVI / Antigravity
+                        Portfolio / Blender / ThreeJs
                     </motion.div>
                 </motion.div>
             )}
