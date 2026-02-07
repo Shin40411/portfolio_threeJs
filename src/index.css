@@ -39,4 +39,40 @@
   .text-scramble {
     font-family: 'JetBrains Mono', monospace;
   }
+
+  @keyframes hologram-flicker {
+    0%, 100% { opacity: 1; }
+    5% { opacity: 0.8; }
+    10% { opacity: 1; }
+    15% { opacity: 0.9; }
+    25% { opacity: 1; }
+    70% { opacity: 0.8; }
+    80% { opacity: 1; }
+    95% { opacity: 0.9; }
+  }
+
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(200%); }
+  }
+
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    1% { transform: translate(-2px, 2px); }
+    2% { transform: translate(2px, -2px); }
+    3% { transform: translate(0); }
+    100% { transform: translate(0); }
+  }
+
+  .animate-hologram-flicker {
+    animation: hologram-flicker 2s infinite;
+  }
+
+  .animate-scan-slow {
+    animation: scanline 8s linear infinite;
+  }
+
+  .animate-glitch {
+    animation: glitch 3s infinite;
+  }
 }
