@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { Experience } from './components/Experience/Experience'
 import { ScrollHandler, ScrollObserver } from './components/ScrollManager'
 import { Loader } from './components/Loader'
+import { MusicToggle } from './components/MusicToggle'
 
 function App() {
   const [isMobile, setIsMobile] = useState(false)
@@ -50,9 +51,25 @@ function App() {
           <ScrollObserver onPageChange={setActivePage} />
           <ScrollHandler />
           <Experience isMobile={isMobile} isTablet={isTablet} isSmallLaptop={isSmallLaptop} />
-          <Scroll html><Overlay isMobile={isMobile} isTablet={isTablet} /></Scroll>
+          <Scroll html><Overlay isMobile={isMobile} isTablet={isTablet} isSmallLaptop={isSmallLaptop} /></Scroll>
         </ScrollControls>
       </Canvas>
+      <div id="character-tooltip" style={{
+        position: 'fixed',
+        background: 'rgba(40, 40, 40, 0.95)',
+        color: '#fff',
+        fontSize: '11px',
+        padding: '4px 8px',
+        borderRadius: '4px',
+        pointerEvents: 'none',
+        zIndex: 9999,
+        whiteSpace: 'nowrap',
+        boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+        display: 'none'
+      }}>
+        👋 Click me!
+      </div>
+      <MusicToggle />
       <div className="glow-frame"></div>
     </div>
   )

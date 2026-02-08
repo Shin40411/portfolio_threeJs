@@ -25,8 +25,7 @@ export function Experience({ isMobile, isTablet, isSmallLaptop }: { isMobile: bo
 
     // Lift character up slightly from the very bottom
     const baseCharacterX = isNonDesktop ? 0 : 0.8
-    const baseCharacterY = isMobile ? -5.4 : (isTablet ? -4.8 : (isSmallLaptop ? -3.8 : -1.1))
-    Broadway:
+    const baseCharacterY = isMobile ? -5.4 : (isTablet ? -4.8 : (isSmallLaptop ? -3.2 : -1.1))
 
     useFrame(() => {
         const offset = scroll.offset

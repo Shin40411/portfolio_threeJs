@@ -58,9 +58,10 @@ const Book = ({ color, title, index }: BookProps) => {
 interface BookshelfProps {
     isMobile: boolean
     isTablet: boolean
+    isSmallLaptop?: boolean
 }
 
-export function Bookshelf({ isMobile, isTablet }: BookshelfProps) {
+export function Bookshelf({ isMobile, isTablet, isSmallLaptop }: BookshelfProps) {
     const projects = [
         { title: "THREE.JS", color: "#b91c1c" },
         { title: "REACT", color: "#1e40af" },
@@ -112,8 +113,8 @@ export function Bookshelf({ isMobile, isTablet }: BookshelfProps) {
         </div>
     )
 
-    const rotationY = isMobile ? 5 : (isTablet ? 12 : 22)
-    const scale = 1.0
+    const rotationY = isMobile ? 5 : (isTablet ? 12 : (isSmallLaptop ? 18 : 22))
+    const scale = isSmallLaptop ? 0.85 : 1.0
 
     return (
         <div

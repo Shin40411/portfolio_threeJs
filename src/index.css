@@ -41,27 +41,71 @@
   }
 
   @keyframes hologram-flicker {
-    0%, 100% { opacity: 1; }
-    5% { opacity: 0.8; }
-    10% { opacity: 1; }
-    15% { opacity: 0.9; }
-    25% { opacity: 1; }
-    70% { opacity: 0.8; }
-    80% { opacity: 1; }
-    95% { opacity: 0.9; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    5% {
+      opacity: 0.8;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    15% {
+      opacity: 0.9;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    70% {
+      opacity: 0.8;
+    }
+
+    80% {
+      opacity: 1;
+    }
+
+    95% {
+      opacity: 0.9;
+    }
   }
 
   @keyframes scanline {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(200%); }
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(200%);
+    }
   }
 
   @keyframes glitch {
-    0% { transform: translate(0); }
-    1% { transform: translate(-2px, 2px); }
-    2% { transform: translate(2px, -2px); }
-    3% { transform: translate(0); }
-    100% { transform: translate(0); }
+    0% {
+      transform: translate(0);
+    }
+
+    1% {
+      transform: translate(-2px, 2px);
+    }
+
+    2% {
+      transform: translate(2px, -2px);
+    }
+
+    3% {
+      transform: translate(0);
+    }
+
+    100% {
+      transform: translate(0);
+    }
   }
 
   .animate-hologram-flicker {
@@ -74,5 +118,38 @@
 
   .animate-glitch {
     animation: glitch 3s infinite;
+  }
+
+  /* Custom cursor for character interaction */
+  .cursor-interact {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="8" fill="%2300E5FF" opacity="0.6"/><circle cx="16" cy="16" r="4" fill="%23ffffff"/></svg>') 16 16, pointer;
+  }
+
+  @keyframes cursor-pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes tooltipPulse {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+
+    50% {
+      transform: translateY(-4px);
+      opacity: 0.9;
+    }
   }
 }

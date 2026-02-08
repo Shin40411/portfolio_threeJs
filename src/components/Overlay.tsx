@@ -17,7 +17,7 @@ const Section = ({ children, className = "", right }: { children: React.ReactNod
     )
 }
 
-export function Overlay({ isMobile, isTablet }: { isMobile: boolean, isTablet: boolean }) {
+export function Overlay({ isMobile, isTablet, isSmallLaptop }: { isMobile: boolean, isTablet: boolean, isSmallLaptop?: boolean }) {
     return (
         <div className="w-screen select-none">
             <Section className="items-start lg:pl-80 lg:pt-40">
@@ -39,7 +39,7 @@ export function Overlay({ isMobile, isTablet }: { isMobile: boolean, isTablet: b
 
             <Section className="items-start text-left">
                 <div className="w-full flex justify-center">
-                    <Bookshelf isMobile={isMobile} isTablet={isTablet} />
+                    <Bookshelf isMobile={isMobile} isTablet={isTablet} isSmallLaptop={isSmallLaptop} />
                 </div>
             </Section>
 
