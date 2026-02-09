@@ -124,7 +124,7 @@ export function Overlay({ isMobile, isTablet, isSmallLaptop }: { isMobile: boole
                     className="p-10 md:p-14 lg:p-16 relative group cursor-pointer max-w-[280px] xs:max-w-sm md:max-w-2xl lg:max-w-4xl ml-auto mt-10 lg:mt-0 text-right"
                 >
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 italic tracking-tighter">LET'S CONNECT</h2>
-                    <p className="text-lg md:text-2xl lg:text-3xl font-mono text-accent mb-12 truncate px-4">HELLO@CLONED-DAVID.IO</p>
+                    <p className="text-lg md:text-2xl lg:text-3xl font-mono text-accent mb-12 truncate px-4">dtho961@gmail.com</p>
                     <div className="flex gap-4 md:gap-6 justify-end">
                         {['GITHUB', 'FACEBOOK', 'EMAIL'].map(link => (
                             <span key={link} className="px-4 md:px-6 py-2 bg-black text-white text-[10px] md:text-xs font-bold hover:bg-accent hover:text-black transition-all transform hover:-translate-y-1">
