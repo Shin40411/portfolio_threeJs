@@ -70,14 +70,14 @@ export function Overlay({ isMobile, isTablet, isSmallLaptop }: { isMobile: boole
                                 <div className="space-y-4">
                                     <h3 className="text-[10px] uppercase tracking-[0.3em] text-blue-400/50 mb-6 flex items-center gap-2">
                                         <div className="w-1.5 h-px bg-blue-400/50"></div>
-                                        Core Technologies
+                                        Frontend & Backend
                                     </h3>
                                     <ul className="space-y-4 text-blue-100/90 text-sm md:text-base">
                                         {[
-                                            "Three.js & WebGL",
-                                            "React Three Fiber",
-                                            "GLSL Shaders",
-                                            "TypeScript & ESM"
+                                            "React / Next.js / Vite",
+                                            "Node.js / NestJS",
+                                            ".NET / ASP.NET Core",
+                                            "TypeScript & JavaScript"
                                         ].map(skill => (
                                             <li key={skill} className="flex items-center gap-4 group/item">
                                                 <div className="w-1 h-1 bg-blue-400 rounded-full group-hover/item:scale-150 group-hover/item:shadow-[0_0_8px_#60a5fa] transition-all"></div>
@@ -90,14 +90,14 @@ export function Overlay({ isMobile, isTablet, isSmallLaptop }: { isMobile: boole
                                 <div className="space-y-4">
                                     <h3 className="text-[10px] uppercase tracking-[0.3em] text-blue-400/50 mb-6 flex items-center gap-2">
                                         <div className="w-1.5 h-px bg-blue-400/50"></div>
-                                        Development focus
+                                        Database & DevOps
                                     </h3>
                                     <ul className="space-y-4 text-blue-100/90 text-sm md:text-base">
                                         {[
-                                            "Experience Design",
-                                            "Real-time Logic",
-                                            "Micro-interactions",
-                                            "Performance 60FPS"
+                                            "SQL Server / MySQL / PostgreSQL",
+                                            "Docker & GitHub Actions",
+                                            "Redis / RabbitMQ",
+                                            "React Native"
                                         ].map(skill => (
                                             <li key={skill} className="flex items-center gap-4 group/item">
                                                 <div className="w-1 h-1 bg-blue-400/50 rounded-full group-hover/item:bg-blue-300 transition-all"></div>
@@ -126,10 +126,14 @@ export function Overlay({ isMobile, isTablet, isSmallLaptop }: { isMobile: boole
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 italic tracking-tighter">LET'S CONNECT</h2>
                     <p className="text-lg md:text-2xl lg:text-3xl font-mono text-accent mb-12 truncate px-4">dtho961@gmail.com</p>
                     <div className="flex gap-4 md:gap-6 justify-end">
-                        {['GITHUB', 'FACEBOOK', 'EMAIL'].map(link => (
-                            <span key={link} className="px-4 md:px-6 py-2 bg-black text-white text-[10px] md:text-xs font-bold hover:bg-accent hover:text-black transition-all transform hover:-translate-y-1">
-                                {link}
-                            </span>
+                        {[
+                            { label: 'GITHUB', href: 'https://github.com/Shin40411' },
+                            { label: 'FACEBOOK', href: 'https://www.facebook.com/hoang.tho.301250' },
+                            { label: 'EMAIL', href: 'mailto:dtho961@gmail.com' },
+                        ].map(link => (
+                            <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="px-4 md:px-6 py-2 bg-black text-white text-[10px] md:text-xs font-bold hover:bg-accent hover:text-black transition-all transform hover:-translate-y-1 no-underline">
+                                {link.label}
+                            </a>
                         ))}
                     </div>
                 </motion.div>

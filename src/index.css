@@ -152,4 +152,88 @@
       opacity: 0.9;
     }
   }
+
+  .book-3d-container {
+    perspective: 1200px;
+    transform-style: preserve-3d;
+  }
+
+  .book-cover {
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: visible;
+  }
+
+  .book-cover.opened {
+    transform: rotateY(-160deg);
+  }
+
+  .book-cover-back {
+    position: absolute;
+    inset: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    border-radius: 0.125rem;
+  }
+
+  .book-inner-page {
+    position: absolute;
+    inset: 0;
+    border-radius: 0.125rem;
+    backface-visibility: hidden;
+  }
+
+  .book-wrapper {
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.15s,
+                opacity 0.4s ease 0.3s;
+  }
+
+  .book-wrapper.zooming {
+    transform: scale(2.5) translateZ(100px) !important;
+    opacity: 0;
+  }
+
+  .book-detail-overlay {
+    animation: detailFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .book-detail-overlay.closing {
+    animation: detailFadeOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  @keyframes detailFadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+      backdrop-filter: blur(0px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+      backdrop-filter: blur(20px);
+    }
+  }
+
+  @keyframes detailFadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95) translateY(20px);
+    }
+  }
+
+  @keyframes pageShine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  .page-shine {
+    background: linear-gradient(90deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
+    background-size: 200% 100%;
+    animation: pageShine 3s ease infinite;
+  }
 }
